@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.*;
+import static org.junit.Assert.*;
 
 public class TestSlipperySlot {
 
@@ -7,12 +7,15 @@ public class TestSlipperySlot {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {5, 5, 5, 5, 5};
 		int reward = slot.payOff(slotValues);
-		assertEquals(1000000, reward);
+		assertEquals(1000000-2, reward);
 	}
 	
 	@Test
 	public void sameFourNumbers() {
-		
+		SlipperySlot slot = new SlipperySlot();
+		int[] slotValues = new int[] {5, 5, 5, 5, 4};
+		int reward = slot.payOff(slotValues);
+		assertEquals(10000-2, reward);
 	}
 	
 	@Test
