@@ -11,7 +11,7 @@ public class BetterSlot {
 		//instantiate an instance of the Random class
 		Random rand = new Random(); 
 		
-		//iterate and generate an interger for each member of the array
+		//iterate and generate an integer for each member of the array
 		for ( int i = 0; i < 5; i++ ) {
 			
 			singleSpin[i] = rand.nextInt(50) + 1;

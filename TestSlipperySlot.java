@@ -1,7 +1,9 @@
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class TestSlipperySlot {
 
+	@Test
 	public void sameFiveNumbers() {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {5, 5, 5, 5, 5};
@@ -9,6 +11,7 @@ public class TestSlipperySlot {
 		assertEquals(99998, reward);
 	}
 	
+	@Test
 	public void sameFourNumbers() {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {5, 5, 5, 5, 3};
@@ -16,6 +19,7 @@ public class TestSlipperySlot {
 		assertEquals(9998, reward);
 	}
 	
+	@Test
 	public void fullHouse() {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {5, 5, 5, 3, 3};
@@ -23,6 +27,7 @@ public class TestSlipperySlot {
 		assertEquals(4998, reward);
 	}
 	
+	@Test
 	public void sameThreeNumbers() {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {5, 5, 5, 3, 1};
@@ -30,6 +35,7 @@ public class TestSlipperySlot {
 		assertEquals(98, reward);
 	}
 	
+	@Test
 	public void sameTwoNumbers() {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {5, 5, 3, 7, 1};
@@ -44,6 +50,7 @@ public class TestSlipperySlot {
 		assertEquals(5, reward);
 	}
 	
+	@Test
 	public void fortyTwo() {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {1, 3, 5, 42, 31};
@@ -51,6 +58,7 @@ public class TestSlipperySlot {
 		assertEquals(0, reward);
 	}
 	
+	@Test
 	public void powerTwo() {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {8, 5, 3, 7, 1};
