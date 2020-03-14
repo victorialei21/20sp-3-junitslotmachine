@@ -33,28 +33,28 @@ public class BetterSlot {
 			cashAmount += 10000;
 		}
 		//if four out of five numbers are the same
-		else if( values[0] == values[1] == values[2] == values[3] || 
-				values[1] == values[2] == values[3] == values[4] ) {
+		else if( (values[0] == values[1] && values[1] == values[2] && values[2] == values[3]) || 
+				(values[1] == values[2] && values[2] == values[3] && values[3] == values[4]) ) {
 			cashAmount += 10000;
 		}
 		//if it's a full house (three are same, two are same)
-		else if( (values[0] == values[1]) && (values[2] == values[3] == values[4])
-				&& (values[1] != values[2])) {
-			cashAmount += 5000;
-		}
-		//second version of full house
-		else if( (values[0] == values[1] == values[2]) && (values[3] == values[4])
+		else if( (values[0] == values[1]) && (values[1] == values[2]) && (values[3] == values[4])
 				&& (values[2] != values[3])) {
 			cashAmount += 5000;
 		}
+		//second version of full house
+		else if( (values[0] == values[1]) && (values[2] == values[3]) && (values[3] == values[4])
+				&& (values[1] != values[2])) {
+			cashAmount += 5000;
+		}
 		//if any three are the same but remaining two are different
-		else if( (values[0] == values[1] == values[2]) || (values[1] == values[2] == values[3]) 
-				|| (values[2] == values[3] == values[4])) {
+		else if( (values[0] == values[1] && values[1] == values[2]) || (values[1] == values[2] && values[2] == values[3]) 
+				|| (values[2] == values[3] && values[3] == values[4])) {
 			cashAmount += 100;
 		}
 		//if any two numbers are the same
 		else if( (values[0] == values[1]) || (values[1] == values[2])
-				|| (values[2] = values[3]) || (values[3] == values[4]) ) {
+				|| (values[2] == values[3]) || (values[3] == values[4]) ) {
 			cashAmount += 10;
 		}
 		
@@ -64,11 +64,11 @@ public class BetterSlot {
 		for (int j = 0; j < 5; j++) {
 			while (perfSquareFlag == false) {
 				
-				double sqrt = Math.sqrt(values[i]);
+				double sqrt = Math.sqrt(values[j]);
 			
-				if (sqrt*sqrt == values[i]) {
+				if (sqrt*sqrt == values[j]) {
 					cashAmount += 7;
-					perSquareFlag = true;
+					perfSquareFlag = true;
 				}//end if statement
 			}//end while loop	
 		}//end for loop
@@ -89,14 +89,14 @@ public class BetterSlot {
 		boolean powerTwoFlag = false; 
 		int testValue = 0;
 		for (int h = 0; h < 5; h++) {
-			testValue = values[i];
+			testValue = values[h];
 			if (testValue == 1) { 
 				powerTwoFlag = true;
 			}//end if statement
-			while(testValue%2 == 0 && !flag) {
+			while(testValue%2 == 0 && flag == false) {
 				testValue /= 2;
 			}//end while loop
-			if(testValue == 1 && !flag) {
+			if(testValue == 1 && flag == false) {
 				cashAmount +=3;
 				powerTwoFlag = true;
 			}//end if statement

@@ -6,14 +6,35 @@ public class TestSlipperySlot {
 		SlipperySlot slot = new SlipperySlot();
 		int[] slotValues = new int[] {5, 5, 5, 5, 5};
 		int reward = slot.payOff(slotValues);
-		assertEquals(1000000-2, reward);
+		assertEquals(99998, reward);
 	}
 	
 	public void sameFourNumbers() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {5, 5, 5, 5, 4};
+		int[] slotValues = new int[] {5, 5, 5, 5, 3};
 		int reward = slot.payOff(slotValues);
-		assertEquals(10000-2, reward);
+		assertEquals(9998, reward);
+	}
+	
+	public void fullHouse() {
+		SlipperySlot slot = new SlipperySlot();
+		int[] slotValues = new int[] {5, 5, 5, 3, 3};
+		int reward = slot.payOff(slotValues);
+		assertEquals(4998, reward);
+	}
+	
+	public void sameThreeNumbers() {
+		SlipperySlot slot = new SlipperySlot();
+		int[] slotValues = new int[] {5, 5, 5, 3, 1};
+		int reward = slot.payOff(slotValues);
+		assertEquals(98, reward);
+	}
+	
+	public void sameTwoNumbers() {
+		SlipperySlot slot = new SlipperySlot();
+		int[] slotValues = new int[] {5, 5, 3, 7, 1};
+		int reward = slot.payOff(slotValues);
+		assertEquals(8, reward);
 	}
 	
 }
