@@ -37,4 +37,24 @@ public class TestSlipperySlot {
 		assertEquals(8, reward);
 	}
 	
+	public void perfSquare() {
+		SlipperySlot slot = new SlipperySlot();
+		int[] slotValues = new int[] {25, 5, 6, 7, 31};
+		int reward = slot.payOff(slotValues);
+		assertEquals(5, reward);
+	}
+	
+	public void fortyTwo() {
+		SlipperySlot slot = new SlipperySlot();
+		int[] slotValues = new int[] {1, 3, 5, 42, 31};
+		int reward = slot.payOff(slotValues);
+		assertEquals(0, reward);
+	}
+	
+	public void powerTwo() {
+		SlipperySlot slot = new SlipperySlot();
+		int[] slotValues = new int[] {8, 5, 3, 7, 1};
+		int reward = slot.payOff(slotValues);
+		assertEquals(1, reward);
+	}
 }

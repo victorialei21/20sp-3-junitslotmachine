@@ -93,10 +93,10 @@ public class BetterSlot {
 			if (testValue == 1) { 
 				powerTwoFlag = true;
 			}//end if statement
-			while(testValue%2 == 0 && flag == false) {
+			while(testValue%2 == 0 && powerTwoFlag == false) {
 				testValue /= 2;
 			}//end while loop
-			if(testValue == 1 && flag == false) {
+			if(testValue == 1 && powerTwoFlag == false) {
 				cashAmount +=3;
 				powerTwoFlag = true;
 			}//end if statement
