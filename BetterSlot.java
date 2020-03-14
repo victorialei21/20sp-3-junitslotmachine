@@ -6,7 +6,7 @@ public class BetterSlot {
 	//a method that generates an array of 5 random integers
 	int[] pullTheLever() {
 		
-		int singleSpin[];
+		int[] singleSpin = new int[5];
 		
 		//instantiate an instance of the Random class
 		Random rand = new Random(); 
