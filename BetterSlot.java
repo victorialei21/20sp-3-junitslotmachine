@@ -86,7 +86,7 @@ public class BetterSlot {
 				
 				double sqrt = Math.sqrt(values[j]);
 			
-				if (sqrt*sqrt == values[j]) {
+				if ((sqrt - Math.floor(sqrt)) == 0) {
 					cashAmount += 7;
 					perfSquareFlag = true;
 				}//end if statement
@@ -129,13 +129,17 @@ public class BetterSlot {
 	public static void main(String[] args) {
 		
 		BetterSlot slot = new BetterSlot();
-		int[] numbers = slot.pullTheLever();
+		/*int[] numbers = slot.pullTheLever();
 		for(int i = 0; i < 5; i++) {
 			System.out.println(numbers[i]);
 
 		}
 		int cash = slot.payOff(numbers);
-		System.out.println("Amount paid: $" + cash);
+		System.out.println("Amount paid: $" + cash);*/
+		
+		int[] givenArray = new int[] {42, 42, 42, 42, 1};
+		int cashTwo = slot.payOff(givenArray);
+		System.out.println("Amount paid: $" + cashTwo);
 		
 	}
 

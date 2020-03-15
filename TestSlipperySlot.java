@@ -30,7 +30,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sameThreeNumbers() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {5, 5, 5, 3, 1};
+		int[] slotValues = new int[] {5, 5, 5, 3, 7};
 		int reward = slot.payOff(slotValues);
 		assertEquals(100, reward);
 	}
@@ -38,7 +38,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sameTwoNumbers() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {5, 5, 3, 7, 1};
+		int[] slotValues = new int[] {5, 5, 3, 7, 11};
 		int reward = slot.payOff(slotValues);
 		assertEquals(10, reward);
 	}
@@ -54,7 +54,7 @@ public class TestSlipperySlot {
 	@Test
 	public void fortyTwo() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {1, 3, 5, 42, 31};
+		int[] slotValues = new int[] {11, 3, 5, 42, 31};
 		int reward = slot.payOff(slotValues);
 		assertEquals(2, reward);
 	}
@@ -62,7 +62,7 @@ public class TestSlipperySlot {
 	@Test
 	public void powerTwo() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {32, 5, 3, 7, 1};
+		int[] slotValues = new int[] {32, 5, 3, 7, 11};
 		int reward = slot.payOff(slotValues);
 		assertEquals(3, reward);
 	}
@@ -94,7 +94,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sixWithTwo() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {25, 25, 25, 25, 1};
+		int[] slotValues = new int[] {25, 25, 25, 25, 11};
 		int reward = slot.payOff(slotValues);
 		assertEquals(10007, reward);
 	}
@@ -102,7 +102,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sevenWithTwo() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {42, 42, 42, 42, 1};
+		int[] slotValues = new int[] {42, 42, 42, 42, 11};
 		int reward = slot.payOff(slotValues);
 		assertEquals(10002, reward);
 	}
@@ -110,7 +110,7 @@ public class TestSlipperySlot {
 	@Test
 	public void eightWithTwo() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {8, 8, 8, 8, 1};
+		int[] slotValues = new int[] {8, 8, 8, 8, 11};
 		int reward = slot.payOff(slotValues);
 		assertEquals(10003, reward);
 	}
@@ -118,7 +118,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sixWithThree() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {25, 25, 25, 1, 1};
+		int[] slotValues = new int[] {25, 25, 25, 3, 3};
 		int reward = slot.payOff(slotValues);
 		assertEquals(5007, reward);
 	}
@@ -126,7 +126,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sevenWithThree() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {42, 42, 42, 1, 1};
+		int[] slotValues = new int[] {42, 42, 42, 11, 11};
 		int reward = slot.payOff(slotValues);
 		assertEquals(5002, reward);
 	}
@@ -135,7 +135,7 @@ public class TestSlipperySlot {
 	@Test
 	public void eightWithThree() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {8, 8, 8, 1, 1};
+		int[] slotValues = new int[] {8, 8, 8, 11, 11};
 		int reward = slot.payOff(slotValues);
 		assertEquals(5003, reward);
 	}
@@ -144,7 +144,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sixWithFour() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {25, 25, 25, 1, 3};
+		int[] slotValues = new int[] {25, 25, 25, 11, 3};
 		int reward = slot.payOff(slotValues);
 		assertEquals(107, reward);
 	}
@@ -152,7 +152,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sevenWithFour() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {42, 42, 42, 1, 3};
+		int[] slotValues = new int[] {42, 42, 42, 11, 3};
 		int reward = slot.payOff(slotValues);
 		assertEquals(102, reward);
 	}
@@ -160,7 +160,7 @@ public class TestSlipperySlot {
 	@Test
 	public void eightWithFour() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {8, 8, 8, 1, 3};
+		int[] slotValues = new int[] {8, 8, 8, 11, 3};
 		int reward = slot.payOff(slotValues);
 		assertEquals(103, reward);
 	}
@@ -168,7 +168,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sixWithFive() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {25, 25, 7, 1, 3};
+		int[] slotValues = new int[] {25, 25, 7, 11, 3};
 		int reward = slot.payOff(slotValues);
 		assertEquals(17, reward);
 	}
@@ -176,7 +176,7 @@ public class TestSlipperySlot {
 	@Test
 	public void sevenWithFive() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {42, 42, 7, 1, 3};
+		int[] slotValues = new int[] {42, 42, 7, 11, 3};
 		int reward = slot.payOff(slotValues);
 		assertEquals(12, reward);
 	}
@@ -184,7 +184,7 @@ public class TestSlipperySlot {
 	@Test
 	public void eightWithFive() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {8, 8, 7, 1, 3};
+		int[] slotValues = new int[] {8, 8, 7, 11, 3};
 		int reward = slot.payOff(slotValues);
 		assertEquals(13, reward);
 	}
@@ -208,7 +208,7 @@ public class TestSlipperySlot {
 	@Test
 	public void allWithFour() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {42, 42, 42, 1, 16};
+		int[] slotValues = new int[] {42, 42, 42, 11, 16};
 		int reward = slot.payOff(slotValues);
 		assertEquals(112, reward);
 	}
@@ -216,7 +216,7 @@ public class TestSlipperySlot {
 	@Test
 	public void allWithFive() {
 		SlipperySlot slot = new SlipperySlot();
-		int[] slotValues = new int[] {42, 42, 3, 1, 16};
+		int[] slotValues = new int[] {42, 42, 3, 11, 16};
 		int reward = slot.payOff(slotValues);
 		assertEquals(22, reward);
 	}
