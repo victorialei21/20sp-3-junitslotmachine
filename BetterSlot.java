@@ -24,17 +24,15 @@ public class BetterSlot {
 	//a method that correctly computes the payoff amount for a single spin of the slot machine
 	int payOff( int[] values ) {
 		
-
-		
 		//sort array 
 		Arrays.sort(values);
-		int cashAmount = -2;
+		int cashAmount = 0;
 		boolean mainFlag = false;
 		
 		
 		//if all five numbers are the same
 		if( values[0] == values[4] ) {
-			cashAmount += 10000;
+			cashAmount += 1000000;
 			mainFlag = true;
 		}
 		
@@ -137,7 +135,7 @@ public class BetterSlot {
 
 		}
 		int cash = slot.payOff(numbers);
-		System.out.println("Amount paid: " + cash);
+		System.out.println("Amount paid: $" + cash);
 		
 	}
 
