@@ -24,45 +24,67 @@ public class BetterSlot {
 	//a method that correctly computes the payoff amount for a single spin of the slot machine
 	int payOff( int[] values ) {
 		
+
+		
 		//sort array 
 		Arrays.sort(values);
 		int cashAmount = -2;
+		boolean mainFlag = false;
+		
 		
 		//if all five numbers are the same
 		if( values[0] == values[4] ) {
 			cashAmount += 10000;
+			mainFlag = true;
 		}
+		
 		//if four out of five numbers are the same
-		else if( (values[0] == values[1] && values[1] == values[2] && values[2] == values[3]) || 
+		if( (values[0] == values[1] && values[1] == values[2] && values[2] == values[3]) || 
 				(values[1] == values[2] && values[2] == values[3] && values[3] == values[4]) ) {
-			cashAmount += 10000;
+			if(mainFlag == false) {
+				mainFlag = true;
+				cashAmount += 10000;
+			}
 		}
+				
 		//if it's a full house (three are same, two are same)
-		else if( (values[0] == values[1]) && (values[1] == values[2]) && (values[3] == values[4])
+		if( (values[0] == values[1]) && (values[1] == values[2]) && (values[3] == values[4])
 				&& (values[2] != values[3])) {
-			cashAmount += 5000;
+			if(mainFlag == false) {
+				mainFlag = true;
+				cashAmount += 5000;
+			}
 		}
 		//second version of full house
-		else if( (values[0] == values[1]) && (values[2] == values[3]) && (values[3] == values[4])
+		if( (values[0] == values[1]) && (values[2] == values[3]) && (values[3] == values[4])
 				&& (values[1] != values[2])) {
-			cashAmount += 5000;
+			if(mainFlag == false) {
+				mainFlag = true;
+				cashAmount += 5000;
+			}
 		}
 		//if any three are the same but remaining two are different
-		else if( (values[0] == values[1] && values[1] == values[2]) || (values[1] == values[2] && values[2] == values[3]) 
+		if( (values[0] == values[1] && values[1] == values[2]) || (values[1] == values[2] && values[2] == values[3]) 
 				|| (values[2] == values[3] && values[3] == values[4])) {
-			cashAmount += 100;
+			if(mainFlag == false) {
+				mainFlag = true;
+				cashAmount += 100;
+			}
 		}
 		//if any two numbers are the same
-		else if( (values[0] == values[1]) || (values[1] == values[2])
+		if( (values[0] == values[1]) || (values[1] == values[2])
 				|| (values[2] == values[3]) || (values[3] == values[4]) ) {
-			cashAmount += 10;
+			if(mainFlag == false) {
+				mainFlag = true;
+				cashAmount += 10;
+			}
 		}
 		
 		
 		//if any number is a perfect square
 		boolean perfSquareFlag = false;
 		for (int j = 0; j < 5; j++) {
-			while (perfSquareFlag == false) {
+			if (perfSquareFlag == false) {
 				
 				double sqrt = Math.sqrt(values[j]);
 			
@@ -70,19 +92,19 @@ public class BetterSlot {
 					cashAmount += 7;
 					perfSquareFlag = true;
 				}//end if statement
-			}//end while loop	
+			}//end if statement	
 		}//end for loop
- 		
+ 	
 		
 		//if any number is 42
 		boolean fortyTwoFlag = false;
 		for (int i = 0; i < 5; i++) {
-			while( fortyTwoFlag == false ) {
+			if( fortyTwoFlag == false ) {
 				if (values[i] == 42) { 
 					cashAmount += 2;
 					fortyTwoFlag = true;
 				}//end if statement
-			}//end while loop
+			}//end if statement
 		}//end for loop
 		
 		//if any number is a power of two 
@@ -108,7 +130,15 @@ public class BetterSlot {
 	
 	public static void main(String[] args) {
 		
-		System.out.println("what");
+		BetterSlot slot = new BetterSlot();
+		int[] numbers = slot.pullTheLever();
+		for(int i = 0; i < 5; i++) {
+			System.out.println(numbers[i]);
+
+		}
+		int cash = slot.payOff(numbers);
+		System.out.println("Amount paid: " + cash);
+		
 	}
 
 }
