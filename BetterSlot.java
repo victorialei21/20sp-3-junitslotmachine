@@ -112,6 +112,7 @@ public class BetterSlot {
 			testValue = values[h];
 			if (testValue == 1) { 
 				powerTwoFlag = true;
+				cashAmount += 3;
 			}//end if statement
 			while(testValue%2 == 0 && powerTwoFlag == false) {
 				testValue /= 2;
@@ -129,17 +130,13 @@ public class BetterSlot {
 	public static void main(String[] args) {
 		
 		BetterSlot slot = new BetterSlot();
-		/*int[] numbers = slot.pullTheLever();
+		int[] numbers = slot.pullTheLever();
 		for(int i = 0; i < 5; i++) {
 			System.out.println(numbers[i]);
 
 		}
 		int cash = slot.payOff(numbers);
-		System.out.println("Amount paid: $" + cash);*/
-		
-		int[] givenArray = new int[] {42, 42, 42, 42, 1};
-		int cashTwo = slot.payOff(givenArray);
-		System.out.println("Amount paid: $" + cashTwo);
+		System.out.println("Amount paid: $" + cash);
 		
 	}
 
