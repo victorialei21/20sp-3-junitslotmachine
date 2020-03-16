@@ -15,10 +15,10 @@ public class BetterSlot {
 		for ( int i = 0; i < 5; i++ ) {
 			
 			singleSpin[i] = rand.nextInt(50) + 1;
-		}
+		}//end for loop
 		
 		return singleSpin;
-	} 
+	}//end pullTheLever method
 	
 	
 	//a method that correctly computes the payoff amount for a single spin of the slot machine
@@ -32,7 +32,7 @@ public class BetterSlot {
 		
 		//if all five numbers are the same
 		if( values[0] == values[4] ) {
-			cashAmount += 1000000;
+			cashAmount = 1000000;
 			mainFlag = true;
 		}
 		
@@ -41,7 +41,7 @@ public class BetterSlot {
 				(values[1] == values[2] && values[2] == values[3] && values[3] == values[4]) ) {
 			if(mainFlag == false) {
 				mainFlag = true;
-				cashAmount += 10000;
+				cashAmount = 10000;
 			}
 		}
 				
@@ -50,7 +50,7 @@ public class BetterSlot {
 				&& (values[2] != values[3])) {
 			if(mainFlag == false) {
 				mainFlag = true;
-				cashAmount += 5000;
+				cashAmount = 5000;
 			}
 		}
 		//second version of full house
@@ -58,7 +58,7 @@ public class BetterSlot {
 				&& (values[1] != values[2])) {
 			if(mainFlag == false) {
 				mainFlag = true;
-				cashAmount += 5000;
+				cashAmount = 5000;
 			}
 		}
 		//if any three are the same but remaining two are different
@@ -66,7 +66,7 @@ public class BetterSlot {
 				|| (values[2] == values[3] && values[3] == values[4])) {
 			if(mainFlag == false) {
 				mainFlag = true;
-				cashAmount += 100;
+				cashAmount = 100;
 			}
 		}
 		//if any two numbers are the same
@@ -74,7 +74,7 @@ public class BetterSlot {
 				|| (values[2] == values[3]) || (values[3] == values[4]) ) {
 			if(mainFlag == false) {
 				mainFlag = true;
-				cashAmount += 10;
+				cashAmount = 10;
 			}
 		}
 		
@@ -125,18 +125,22 @@ public class BetterSlot {
 		
 		return cashAmount;
 		
-	}
+	}//end payOff method
 	
 	public static void main(String[] args) {
 		
 		BetterSlot slot = new BetterSlot();
 		int[] numbers = slot.pullTheLever();
+		
+		//print out the randomly generated numbers
 		for(int i = 0; i < 5; i++) {
 			System.out.println(numbers[i]);
 
 		}
 		int cash = slot.payOff(numbers);
-		System.out.println("Amount paid: $" + cash);
+		
+		//print the total cash reward
+		System.out.println("Payoff Amount: $" + cash);
 		
 	}
 
