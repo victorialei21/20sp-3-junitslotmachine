@@ -27,38 +27,55 @@ public class BetterSlot {
 		//sort array 
 		Arrays.sort(values);
 		int cashAmount = 0;
+		boolean mainFlag = false;
 		
 		
 		//if all five numbers are the same
 		if( values[0] == values[4] ) {
 			cashAmount = 1000000;
+			mainFlag = true;
 		}
 		
 		//if four out of five numbers are the same
-		else if( (values[0] == values[1] && values[1] == values[2] && values[2] == values[3]) || 
+		if( (values[0] == values[1] && values[1] == values[2] && values[2] == values[3]) || 
 				(values[1] == values[2] && values[2] == values[3] && values[3] == values[4]) ) {
+			if(mainFlag == false) {
+				mainFlag = true;
 				cashAmount = 10000;
+			}
 		}
 				
 		//if it's a full house (three are same, two are same)
-		else if( (values[0] == values[1]) && (values[1] == values[2]) && (values[3] == values[4])
+		if( (values[0] == values[1]) && (values[1] == values[2]) && (values[3] == values[4])
 				&& (values[2] != values[3])) {
+			if(mainFlag == false) {
+				mainFlag = true;
 				cashAmount = 5000;
+			}
 		}
 		//second version of full house
-		else if( (values[0] == values[1]) && (values[2] == values[3]) && (values[3] == values[4])
+		if( (values[0] == values[1]) && (values[2] == values[3]) && (values[3] == values[4])
 				&& (values[1] != values[2])) {
+			if(mainFlag == false) {
+				mainFlag = true;
 				cashAmount = 5000;
+			}
 		}
 		//if any three are the same but remaining two are different
-		else if( (values[0] == values[1] && values[1] == values[2]) || (values[1] == values[2] && values[2] == values[3]) 
-				|| (values[2] == values[3] && values[3] == values[4])) }
+		if( (values[0] == values[1] && values[1] == values[2]) || (values[1] == values[2] && values[2] == values[3]) 
+				|| (values[2] == values[3] && values[3] == values[4])) {
+			if(mainFlag == false) {
+				mainFlag = true;
 				cashAmount = 100;
+			}
 		}
 		//if any two numbers are the same
-		else if( (values[0] == values[1]) || (values[1] == values[2])
+		if( (values[0] == values[1]) || (values[1] == values[2])
 				|| (values[2] == values[3]) || (values[3] == values[4]) ) {
+			if(mainFlag == false) {
+				mainFlag = true;
 				cashAmount = 10;
+			}
 		}
 		
 		
